@@ -5,20 +5,20 @@
 class GitTagManager < Formula
   desc ""
   homepage ""
-  version "0.0.2"
+  version "0.0.3"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/taxintt/git-tag-manager/releases/download/v0.0.2/git-tag-manager_Darwin_arm64.tar.gz"
-      sha256 "e50541ce6c262a455cd18f3b1b842162d430718497127590515d2f54b599c04a"
+    if Hardware::CPU.intel?
+      url "https://github.com/taxintt/git-tag-manager/releases/download/v0.0.3/git-tag-manager_Darwin_x86_64.tar.gz"
+      sha256 "aeb01564932de91a149541aaa59c47494027b6ec4edf1b2c68efad76f011ea12"
 
       def install
         bin.install "git-tag-manager"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/taxintt/git-tag-manager/releases/download/v0.0.2/git-tag-manager_Darwin_x86_64.tar.gz"
-      sha256 "c88c8e342ca5967af8c32209cdb3e5ae98b34a38a5e2f6062f1009d729275365"
+    if Hardware::CPU.arm?
+      url "https://github.com/taxintt/git-tag-manager/releases/download/v0.0.3/git-tag-manager_Darwin_arm64.tar.gz"
+      sha256 "f58de6a5052b1a27afb2057c008b9597d836e4028a6a0e25741883d0955811f2"
 
       def install
         bin.install "git-tag-manager"
@@ -27,17 +27,17 @@ class GitTagManager < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/taxintt/git-tag-manager/releases/download/v0.0.2/git-tag-manager_Linux_arm64.tar.gz"
-      sha256 "b59ffc7996d0299d1c00a88d6d0992dab5ba1aeac4bed90bcbcc539f84dfdf8c"
+    if Hardware::CPU.intel?
+      url "https://github.com/taxintt/git-tag-manager/releases/download/v0.0.3/git-tag-manager_Linux_x86_64.tar.gz"
+      sha256 "c4bc6ffa54ba1e798dee145fd392c5ecc7f50d8a1c8126fb3fb9caa4a28ea001"
 
       def install
         bin.install "git-tag-manager"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/taxintt/git-tag-manager/releases/download/v0.0.2/git-tag-manager_Linux_x86_64.tar.gz"
-      sha256 "fa3c24afffe2d680829681a7c8b7c8c00c3ea175e62f4edaf3b08bf246fd148a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/taxintt/git-tag-manager/releases/download/v0.0.3/git-tag-manager_Linux_arm64.tar.gz"
+      sha256 "cb0339c875576ffb032a8ca59fb97099e8d64382600286e4766efa2b4445aa2f"
 
       def install
         bin.install "git-tag-manager"
