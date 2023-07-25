@@ -5,20 +5,20 @@
 class Tagli < Formula
   desc ""
   homepage ""
-  version "0.0.5"
+  version "0.0.7"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/taxintt/tagli/releases/download/v0.0.5/tagli_Darwin_x86_64.tar.gz"
-      sha256 "cf885e8c354ca10702c1ca1852683054bc582b1fa1f0d51e1778ef3b22e40005"
+      url "https://github.com/taxintt/tagli/releases/download/v0.0.7/tagli_Darwin_x86_64.tar.gz"
+      sha256 "3bb6e22bc739328e87c601899bc0e58addfb09071092f3bbda93748750145322"
 
       def install
         bin.install "tagli"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/taxintt/tagli/releases/download/v0.0.5/tagli_Darwin_arm64.tar.gz"
-      sha256 "81c8b2572ebf95af6a00350c5598f82134f2711714ae7e12b090424f530f26f0"
+      url "https://github.com/taxintt/tagli/releases/download/v0.0.7/tagli_Darwin_arm64.tar.gz"
+      sha256 "a0c01aaaf47bb5164ff3f6974f6665cc39f71d8120df06165b2c49770c0d1ef7"
 
       def install
         bin.install "tagli"
@@ -27,17 +27,17 @@ class Tagli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/taxintt/tagli/releases/download/v0.0.5/tagli_Linux_x86_64.tar.gz"
-      sha256 "13d979cd9afc204c1610ae68a1ee8077a8ecea1a80d6ee5f82460d6c69bf70b3"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/taxintt/tagli/releases/download/v0.0.7/tagli_Linux_arm64.tar.gz"
+      sha256 "9c944f232a0950ddf3e8c68d27f42001b4248ccd3d96c95fefc9144562677f7f"
 
       def install
         bin.install "tagli"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/taxintt/tagli/releases/download/v0.0.5/tagli_Linux_arm64.tar.gz"
-      sha256 "8b9abaeeb12605b83b3267c2cb77e02d06753bb37df87bc33c636f3f4c613471"
+    if Hardware::CPU.intel?
+      url "https://github.com/taxintt/tagli/releases/download/v0.0.7/tagli_Linux_x86_64.tar.gz"
+      sha256 "8f3fa4b30dce0c56803eb5a7ace2e1260ee76f271f2213a8943ef70e717cc659"
 
       def install
         bin.install "tagli"
