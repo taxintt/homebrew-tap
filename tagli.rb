@@ -5,20 +5,20 @@
 class Tagli < Formula
   desc ""
   homepage ""
-  version "0.1.0"
+  version "0.1.1"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/taxintt/tagli/releases/download/v0.1.0/tagli_Darwin_x86_64.tar.gz"
-      sha256 "c6f5428b70bbabbacfe476095ae5584fec39cc08262df053bebd9b503a67851d"
+    on_intel do
+      url "https://github.com/taxintt/tagli/releases/download/v0.1.1/tagli_Darwin_x86_64.tar.gz"
+      sha256 "3153a0c583b8a5a85675f12b9c229474f2288e0345b8d7f2676c53620275588f"
 
       def install
         bin.install "tagli"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/taxintt/tagli/releases/download/v0.1.0/tagli_Darwin_arm64.tar.gz"
-      sha256 "8aefe9338169f0014f487cb30ab4e8d87e261315f511f4f4faf15f7f9bbcea7e"
+    on_arm do
+      url "https://github.com/taxintt/tagli/releases/download/v0.1.1/tagli_Darwin_arm64.tar.gz"
+      sha256 "f478c6662c467d4c332df3ddcf4029f53bc4787a65991dc063ef71bd52af197e"
 
       def install
         bin.install "tagli"
@@ -27,20 +27,24 @@ class Tagli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/taxintt/tagli/releases/download/v0.1.0/tagli_Linux_arm64.tar.gz"
-      sha256 "3450150009cbd394ef3971b8169302c97392cd715a04fcf85efd92a3030acea8"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/taxintt/tagli/releases/download/v0.1.1/tagli_Linux_x86_64.tar.gz"
+        sha256 "a3b97ded68af53b620cef46f383333df76364f4068cee5c01b7cc1e478e2893b"
 
-      def install
-        bin.install "tagli"
+        def install
+          bin.install "tagli"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/taxintt/tagli/releases/download/v0.1.0/tagli_Linux_x86_64.tar.gz"
-      sha256 "887fc650ede8901c54607105940457ead540f62d2ad069d97c12afed0b3b16d8"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/taxintt/tagli/releases/download/v0.1.1/tagli_Linux_arm64.tar.gz"
+        sha256 "5988989f09967ddb1a738067d4d22fdb586e99e9e68c1eab6403e3698ebb90ac"
 
-      def install
-        bin.install "tagli"
+        def install
+          bin.install "tagli"
+        end
       end
     end
   end
