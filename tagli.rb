@@ -5,20 +5,20 @@
 class Tagli < Formula
   desc ""
   homepage ""
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
     on_intel do
-      url "https://github.com/taxintt/tagli/releases/download/v0.1.1/tagli_Darwin_x86_64.tar.gz"
-      sha256 "3153a0c583b8a5a85675f12b9c229474f2288e0345b8d7f2676c53620275588f"
+      url "https://github.com/taxintt/tagli/releases/download/v0.1.2/tagli_Darwin_x86_64.tar.gz"
+      sha256 "5aed2a7586af445d50453e6f7a9d3affa8eb8645c0b30543fc023ebbeb8a48dd"
 
       def install
         bin.install "tagli"
       end
     end
     on_arm do
-      url "https://github.com/taxintt/tagli/releases/download/v0.1.1/tagli_Darwin_arm64.tar.gz"
-      sha256 "f478c6662c467d4c332df3ddcf4029f53bc4787a65991dc063ef71bd52af197e"
+      url "https://github.com/taxintt/tagli/releases/download/v0.1.2/tagli_Darwin_arm64.tar.gz"
+      sha256 "b4ecf70e89d8fc6a3d355e3e96ffed1f31340f6628d5bf31ddb106f2a9cc66f9"
 
       def install
         bin.install "tagli"
@@ -29,8 +29,8 @@ class Tagli < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/taxintt/tagli/releases/download/v0.1.1/tagli_Linux_x86_64.tar.gz"
-        sha256 "a3b97ded68af53b620cef46f383333df76364f4068cee5c01b7cc1e478e2893b"
+        url "https://github.com/taxintt/tagli/releases/download/v0.1.2/tagli_Linux_x86_64.tar.gz"
+        sha256 "7d9e473fad6bd6c06e18152fa44f09e3e9bd373d09262c358f45d0654c53a934"
 
         def install
           bin.install "tagli"
@@ -39,8 +39,8 @@ class Tagli < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/taxintt/tagli/releases/download/v0.1.1/tagli_Linux_arm64.tar.gz"
-        sha256 "5988989f09967ddb1a738067d4d22fdb586e99e9e68c1eab6403e3698ebb90ac"
+        url "https://github.com/taxintt/tagli/releases/download/v0.1.2/tagli_Linux_arm64.tar.gz"
+        sha256 "3221a6ea7bfffd784600be27413d616984af148682c6e5c7aaae11cef407c8cc"
 
         def install
           bin.install "tagli"
